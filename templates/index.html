@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Images with Custom EXIF Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .heading {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container text-center">
+        <h1 class="heading">Upload Image and Customize EXIF Data</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="image" class="form-label">Select an Image:</label>
+                <input class="form-control" type="file" name="image" accept="image/*" required>
+            </div>
+
+            <h4>Custom EXIF Data</h4>
+            <div class="mb-3">
+                <label for="camera_make" class="form-label">Camera Make:</label>
+                <input class="form-control" type="text" name="camera_make" placeholder="e.g. Canon" required>
+            </div>
+            <div class="mb-3">
+                <label for="camera_model" class="form-label">Camera Model:</label>
+                <input class="form-control" type="text" name="camera_model" placeholder="e.g. 5D Mark IV" required>
+            </div>
+            <div class="mb-3">
+                <label for="date_taken" class="form-label">Date Taken:</label>
+                <input class="form-control" type="datetime-local" name="date_taken" required>
+            </div>
+            <div class="mb-3">
+                <label for="latitude" class="form-label">GPS Latitude (decimal):</label>
+                <input class="form-control" type="number" step="any" name="latitude" placeholder="e.g. 43.7333" required>
+            </div>
+            <div class="mb-3">
+                <label for="longitude" class="form-label">GPS Longitude (decimal):</label>
+                <input class="form-control" type="number" step="any" name="longitude" placeholder="e.g. 7.4167" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Generate and Download</button>
+        </form>
+        <div class="footer">
+            <p>&copy; 2024 EXIF Modifier</p>
+        </div>
+    </div>
+
+</body>
+</html>
