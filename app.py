@@ -104,6 +104,11 @@ def connect_to_database():
 def index():
     return render_template('index.html')  # Ensure this template exists in the templates directory
 
+# Test route
+@app.route('/test')
+def test():
+    return "This is a test route!"  # Simple text response for testing
+
 # Route to handle image upload, transformation, and EXIF customization
 @app.route('/upload', methods=['POST'])
 def upload_image():
