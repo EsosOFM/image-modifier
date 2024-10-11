@@ -101,7 +101,7 @@ def connect_to_database():
 
 # Route to the homepage
 @app.route('/')
-def index():
+def home():
     return render_template('index.html')  # Ensure this template exists in the templates directory
 
 # Test route
